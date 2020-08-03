@@ -1,0 +1,264 @@
+var getapprover = from talent in _context.TalentRequests
+                              where talent.JobPosterID == taskrowpkid
+                              select new
+                              {
+                                  approver = Get_ApproverName(talent.ApproverFKID)
+                              };
+            var getcollabator = from talen in _context.TalentRequests
+                                where talen.JobPosterID == taskrowpkid
+                                select new
+                                {
+                                    collaborator = Get_CollaboratorName(talen.CollaboratorFKID)
+                                };
+								
+								
+
+  [Route("/api/Call_bindgrid/{userparamvalue}/{roleparamvalue}")]
+        [HttpGet("{userparamvalue}/{roleparamvalue}")]
+        public Task_BindGridView GetTasks(string userparamvalue, string roleparamvalue)
+        {
+            //var getuservalue = await _context.Users.Where(u => u.UserName == userparamvalue).FirstOrDefaultAsync();
+            //var actionuser = await _context.Tasks.Where(t => t.ActionUserID == getuservalue.UserPKID && t.IsActive == true).ToListAsync();
+            //return actionuser;
+           // var hrtaskvalues = null;
+           if(roleparamvalue == "HR Manager")
+            {
+                var getvaluebindgrid = (from user in _context.Users
+                                join ta in _context.Tasks on user.UserPKID equals ta.ActionUserID
+                                join role in _context.UserRoles on user.RoleFKID equals role.RolePKID
+                                join tq in _context.TalentRequests on ta.JobPosterID equals tq.JobPosterID                                
+                                where user.UserName == userparamvalue && ta.IsActive == true && role.RoleTitle == roleparamvalue
+                                && ta.IsCompleted == false && ta.IsApproved == false
+                                select new Task_BindGridView()
+                                {
+                                    taskid = ta.TasksPKID,
+                                    createdon = Convert.ToDateTime(ta.CreatedDate),
+                                    tasktype = ta.TasksActivity,
+                                    assignor = user.UserName,
+                                    priority = "High",
+                                    //roletitle = roleparamvalue,
+                                    //iscompleted = ta.IsCompleted,
+                                    //isrejected = ta.IsRejected,
+                                    //isactive = ta.IsActive,
+                                  //  isapproved = ta.IsApproved,
+                                    jobposterid = ta.JobPosterID,
+                                    approver = tq.ApproverFKID,
+                                    actionuserid = ta.ActionUserID
+
+                                }).FirstOrDefault();
+                int approvertotalcount = getvaluebindgrid.approver.Split(',').Count() - 1;
+                int approvercount = _context.Tasks.Where(x => x.JobPosterID == getvaluebindgrid.jobposterid && x.IsApproved == true && x.IsCompleted == true).Count();
+                if(approvertotalcount == approvercount)
+                {
+                    getvaluebindgrid1 = (from task in _context.Tasks
+                                         join user in _context.Users on task.ActionUserID equals user.UserPKID
+                                         where task.ActionUserID == getvaluebindgrid.actionuserid && task.JobPosterID == getvaluebindgrid.jobposterid
+                                         select new Task_BindGridView()
+                                         {
+                                             taskid = task.TasksPKID,
+                                             createdon = Convert.ToDateTime(task.CreatedDate),
+                                             tasktype = task.TasksActivity,
+                                             assignor = user.UserName,
+                                             priority = "High",
+                                             jobposterid = task.JobPosterID,
+                                             approver = getvaluebindgrid.approver,
+                                             actionuserid = getvaluebindgrid.actionuserid
+                                         }).FirstOrDefault();
+                }
+               
+            }
+            else
+            {
+
+            }
+
+           
+            //int approvertotalcount = getvalue.approver.Split(',').Count() - 1;
+            //int approvercount = _context.Tasks.Where(x => x.JobPosterID == getvalue.jobposterid && x.IsApproved == true && x.IsCompleted == true).Count();
+            //if(approvertotalcount == approvercount)
+            //{
+            //    if(getvalue.roletitle == "HR Manager")
+            //    {
+            //        var hrtaskvalues = new Task()
+            //        {
+            //            TasksPKID = getvalue.taskid,
+            //            CreatedDate = getvalue.createdon,
+            //            TasksActivity = getvalue.tasktype,
+            //            UpdatedBy = "High",
+            //            JobPosterID = getvalue.jobposterid
+            //        };
+            //    }
+            //}
+
+            //return hrtaskvalues;
+
+
+            return getvaluebindgrid1;
+
+        }
+
+        public class Task_BindGridView
+        {
+            public int taskid { get; set; }
+            public DateTime createdon { get; set; }
+            public string tasktype { get; set; }
+            public string assignor { get; set; }
+            public string priority { get; set; }
+            public string jobposterid { get; set; }
+            public string approver { get; set; }
+            public int actionuserid { get; set; }
+        }
+
+		Working method
+		
+		 [Route("/api/Call_tasks/{userparamvalue}/{roleparamvalue}")]
+        [HttpGet("{userparamvalue}/{roleparamvalue}")]
+        public List<TasksView> GetTasks(string userparamvalue, string roleparamvalue)
+        {
+            //var getuservalue = await _context.Users.Where(u => u.UserName == userparamvalue).FirstOrDefaultAsync();
+            //var actionuser = await _context.Tasks.Where(t => t.ActionUserID == getuservalue.UserPKID && t.IsActive == true).ToListAsync();
+            //return actionuser;
+
+            var getvalue = (from user in _context.Users
+                            join ta in _context.Tasks on user.UserPKID equals ta.ActionUserID
+                            //  join role in _context.UserRoles on user.RoleFKID equals role.RolePKID
+                            //join tq in _context.TalentRequests on ta.JobPosterID equals tq.JobPosterID
+                            //join sta in _context.Statuses on Convert.ToInt32(tq.StatusFKID) equals sta.StatusPKID
+                            where user.UserName == userparamvalue && ta.IsActive == true && roleparamvalue != "Project Owner"
+                            select new TasksView()
+                            {
+                                
+                                taskid = ta.TasksPKID,
+                                createdon = Convert.ToDateTime(ta.CreatedDate),
+                                tasktype = ta.TasksActivity,
+                                assignor = user.UserName,
+                                priority = "High",
+                                roletitle = roleparamvalue,
+                                iscompleted = ta.IsCompleted,
+                                isrejected = ta.IsRejected,
+                                isactive = ta.IsActive,
+                                isapproved = ta.IsApproved,
+                                jobposterid = ta.JobPosterID
+                            });
+            return getvalue.ToList();
+
+        }
+		
+		// Working not bind grid
+		
+		var getvaluebindgrid = (from user in _context.Users
+                                        join ta in _context.Tasks on user.UserPKID equals ta.ActionUserID
+                                        join role in _context.UserRoles on user.RoleFKID equals role.RolePKID
+                                        join tq in _context.TalentRequests on ta.JobPosterID equals tq.JobPosterID
+                                        where user.UserName == userparamvalue && ta.IsActive == true && role.RoleTitle == roleparamvalue
+                                        && ta.IsCompleted == false && ta.IsApproved == false
+                                        select new Task_BindGridView()
+                                        {
+                                            taskid = ta.TasksPKID,
+                                            createdon = Convert.ToDateTime(ta.CreatedDate),
+                                            tasktype = ta.TasksActivity,
+                                            assignor = user.UserName,
+                                            priority = "High",
+                                            //roletitle = roleparamvalue,
+                                            //iscompleted = ta.IsCompleted,
+                                            //isrejected = ta.IsRejected,
+                                            //isactive = ta.IsActive,
+                                            //  isapproved = ta.IsApproved,
+                                            jobposterid = ta.JobPosterID,
+                                            approver = tq.ApproverFKID,
+                                            actionuserid = ta.ActionUserID
+
+                                        }).FirstOrDefault();
+                int approvertotalcount = getvaluebindgrid.approver.Split(',').Count() - 1;
+                int approvercount = _context.Tasks.Where(x => x.JobPosterID == getvaluebindgrid.jobposterid && x.IsApproved == true && x.IsCompleted == true).Count();
+                if (approvertotalcount == approvercount)
+                {
+                    getvaluebindgrid1 =  (from task in _context.Tasks
+                                         join user in _context.Users on task.ActionUserID equals user.UserPKID
+                                         where task.ActionUserID == getvaluebindgrid.actionuserid && task.JobPosterID == getvaluebindgrid.jobposterid
+                                         select new Task_BindGridView()
+                                         {
+                                             taskid = task.TasksPKID,
+                                             createdon = Convert.ToDateTime(task.CreatedDate),
+                                             tasktype = task.TasksActivity,
+                                             assignor = user.UserName,
+                                             priority = "High",
+                                             jobposterid = task.JobPosterID,
+                                             approver = getvaluebindgrid.approver,
+                                             actionuserid = getvaluebindgrid.actionuserid
+                                         }).FirstOrDefault();
+                }
+
+            }
+            else
+            {
+			
+			
+			// Working method
+			 [Route("/api/Call_bindgrid/{userparamvalue}/{roleparamvalue}")]
+        [HttpGet("{userparamvalue}/{roleparamvalue}")]
+        public List<TasksView> GetTasks(string userparamvalue, string roleparamvalue)
+        {
+            //var getuservalue = await _context.Users.Where(u => u.UserName == userparamvalue).FirstOrDefaultAsync();
+            //var actionuser = await _context.Tasks.Where(t => t.ActionUserID == getuservalue.UserPKID && t.IsActive == true).ToListAsync();
+            //return actionuser;
+
+            var getvalue = (from user in _context.Users
+                            join ta in _context.Tasks on user.UserPKID equals ta.ActionUserID
+                            join role in _context.UserRoles on user.RoleFKID equals role.RolePKID
+                            //join tq in _context.TalentRequests on ta.JobPosterID equals tq.JobPosterID
+                            //join sta in _context.Statuses on Convert.ToInt32(tq.StatusFKID) equals sta.StatusPKID
+                            where user.UserName == userparamvalue && ta.IsActive == true && role.RoleTitle == roleparamvalue
+                             && ta.IsApproved != true && ta.IsCompleted != true && ta.IsRejected != true 
+
+                            select new TasksView()
+                            {
+
+                                taskid = ta.TasksPKID,
+                                createdon = Convert.ToDateTime(ta.CreatedDate),
+                                tasktype = ta.TasksActivity,
+                                assignor = user.UserName,
+                                priority = "High",
+                                roletitle = roleparamvalue,
+                                iscompleted = ta.IsCompleted,
+                                isrejected = ta.IsRejected,
+                                isactive = ta.IsActive,
+                                isapproved = ta.IsApproved,
+                                jobposterid = ta.JobPosterID
+                            });
+            return getvalue.ToList();
+        }
+
+  // update task working method
+  StringBuilder sb = new StringBuilder();
+                    var checkroles = _context.UserRoles.FirstOrDefault(u => u.RoleTitle == roletitle);
+                    if(checkroles != null)
+                    {
+                        var chkusers = _context.Users.FirstOrDefault(f => f.RoleFKID == checkroles.RolePKID);
+                        if(chkusers != null)
+                        {
+                            int taskapprovertotal = _context.Tasks.Where(t => t.JobPosterID == jobposterid && t.IsActive == true).Count();
+                            int approvercount = _context.Tasks.Where(x => x.JobPosterID == jobposterid &&
+                            x.IsApproved == true && x.IsCompleted == true).Count();
+                            if (approvercount == (taskapprovertotal - approvercount))
+                            {
+                                sb.Append(chkusers.UserPKID);
+                            }
+                            else
+                            {
+                                sb.Append(chkusers.UserPKID);
+                            }
+
+                        }
+
+                    }
+
+                    sb.ToString();
+
+					// Duration dropdown 
+					
+			 <select class="form-control select2" name="duration" id="duration" #dur 
+          [(ngModel)]="assigninhtmlctrl.DurationFKID">
+            <option value="0"></option>
+            <option *ngFor="let duration of reqservice.bindstatus" value="{{duration.StatusPKID}}">{{duration.StatusName}}</option>
+          </select>

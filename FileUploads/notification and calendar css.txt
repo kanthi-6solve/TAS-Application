@@ -1,0 +1,173 @@
+/* Notification */
+.not-list{
+    list-style-type: none !important;
+}
+.not-date{
+    color: #dc143c;
+}
+.not-scroll{
+    overflow-y: scroll;
+    height: 77%;
+}
+.not-list-color{
+    background-color: #f3f4f7;
+}
+/* End-Notification */
+
+
+/* Calendar-page */
+
+.calendar{
+    background-color: #fff;
+}
+.btn.ml-2.link-cal{
+    border: 1px solid #ccc;
+    border-radius: 0;
+}
+.calendar .btn.btn-primary{
+    border-radius: 0;
+}
+.modal-position {
+    max-width: 500px;
+    margin: 6.75rem auto !important;
+}
+.head-bottom{
+    border-bottom: 0 !important;
+}
+.foot-top{
+    border-top: 0 !important;
+}
+.modal-close{
+    background-color: #ccc !important;
+}
+.d-flex.flex-row.bd-highlight.m-3.mr-5.calendar-flex{
+    margin-left: 4rem !important;
+}
+.border-flex{
+    border: 1px solid #000;
+}
+.flex-grow-1{
+    width: 10%;
+}
+.dot {
+  height: 12px;
+  width: 12px;
+  background-color: rgb(235, 17, 17);
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: 8px;
+  left: 22px;
+}
+.cand-date{
+    width: 125px;
+    height: 35px;
+}
+.cand-time{
+    width: 120px;
+}
+.form-control.cand-form{
+    width: 97%;
+    height: 32px;
+    border-color: #000;
+}
+.calendar .btn.btn-primary.cal-add{
+    border-radius: 5px;
+}
+.cal-popup{
+    color: #007bff;
+}
+.btn.btn-primary.cal-add.pl-5.pr-5{
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+/* End-of-calendar-page */
+
+
+@media (min-width: 320px) and (max-width: 767px){ 
+
+        .notify-space, .col-2.not-date{
+            padding-left: 0px !important;
+            padding-right: 0px !important;
+        }
+        .col-1.not-icon{
+            padding-left: 0px !important;
+        }
+        .col-12.col-md-10.py-3.p-4.not-space{
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+        }
+        .d-flex.flex-grow-1.justify-content-center.border-flex.p-3{
+            padding: 0px !important;
+        }
+        .d-flex.flex-grow-1.justify-content-end.border-flex.p-4{
+            padding: 0.5rem !important;
+        }
+        .more-option{
+            display: none;
+        }
+        .btn.ml-2.link-cal {
+            margin-top: 10px;
+            padding-left: 22px;
+            padding-right: 24px;
+            margin-left: 0px !important;
+        }
+        .btn.btn-primary.ml-2.day-list{
+            float: right;
+        }
+        .col-md-4.d-flex.justify-content-end.month-list{
+            justify-content: center !important;
+        }
+        .month-name h4{
+            margin: 10px 0px;
+        }
+        .btn.btn-primary.cal-add.pt-1.pb-1.ml-1{
+            padding: 1px 3px;
+        }
+        .form-control.cand-form.meet-title{
+            border-top: 0px !important;
+            border-left: 0px !important;
+            border-right: 0px !important;
+            border-radius: 0;
+        }
+        .btn.btn-primary.cal-add.pl-5.pr-5{
+            padding-left: 9px !important;
+            padding-right: 9px !important;
+        }
+        .acc-col{
+            padding-left: 5px !important;
+            padding-right: 0px !important;
+        }
+        .modal-footer.foot-top.pt-0.pr-3{
+            padding-right: 2rem !important;
+        }
+        .modal-title.cal-popup.pl-4{
+            padding-left: 0px !important;
+        }
+        .modal-body h3, .meet-date.pl-5{
+            padding-left: 1rem !important;
+        }
+        .meet-sum.ml-5{
+            margin-left: 1rem !important;
+        }
+   }
+@media (min-width: 768px) and (max-width: 991px) {  
+        .calendar .btn.btn-primary{
+            padding: 4px;
+        }
+        .calendar .btn.btn-primary.cal-add{
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+   }
+@media (min-width: 992px) and (max-width: 1199px) {
+    .not-scroll{
+        overflow-y: scroll;
+        height: 49%;
+    }
+}
+ @media (min-width: 1200px) {  
+    .chev-right{
+        float: right;
+    }
+   }

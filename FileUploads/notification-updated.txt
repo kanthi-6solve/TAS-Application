@@ -1,0 +1,436 @@
+<div class="wrapper">
+    <div class="container-fluid">
+      <header>
+        <!-- navbar for large screen -->
+        <div class="d-none d-sm-block">
+          <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+          <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+          <img src="assets/6Solvelogo.jpg" class="d-inline-block align-top logo" alt="logo-image">
+          </a>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+                <div class="main pt-2">
+                    <div class="form-group has-search text-search">
+                      <i-feather name="search" class="icon-color form-control-feedback"></i-feather>
+                      <input type="text" class="form-control" id="search" placeholder="Search">
+                    </div>
+                  </div>
+            </li>
+            <li class="dropdown p-2">
+                <a href="#" class="dropdown-toggle notify-bell" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <a href="#" data-toggle="tooltip" data-placement="left" title="8 new unread notifications">
+                    <i-feather name="bell" class="icon-color"></i-feather><span class="dot"></span>
+                  </a>
+                </a>
+                <ul class="dropdown-menu notify-drop">
+                  <div class="notify-drop-title">
+                      <div class="row">
+                          <div class="col-md-6 col-sm-6 col-xs-6">Notification (<b>2</b>)</div>
+                          <div class="col-md-6 col-sm-6 col-xs-6 text-right">Clear all</div>
+                      </div>
+                  </div>
+                  <div class="drop-content">
+                      <li>
+                          <div class="row">
+                          <div class="col-2 col-md-2 notify-img">
+                            <i-feather name="user" class="icon-color"></i-feather>
+                          </div>
+                          <div class="col-9 col-md-9 offset-1">
+                            <p>Lorem ipsum sit dolor amet consilium.</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="row">
+                            <div class="col-2 col-md-2 notify-img">
+                              <i-feather name="user" class="icon-color"></i-feather>
+                            </div>
+                            <div class="col-9 col-md-9 offset-1">
+                              <p>Lorem ipsum sit dolor amet consilium.</p>
+                            </div>
+                          </div>
+                      </li>
+                      <li>
+                        <div class="row">
+                            <div class="col-2 col-md-2 notify-img">
+                              <i-feather name="user" class="icon-color"></i-feather>
+                            </div>
+                            <div class="col-9 col-md-9 offset-1">
+                              <p>Lorem ipsum sit dolor amet consilium.</p>
+                            </div>
+                          </div>
+                      </li>
+                      <li>
+                        <div class="row">
+                            <div class="col-2 col-md-2 notify-img">
+                              <i-feather name="user" class="icon-color"></i-feather>
+                            </div>
+                            <div class="col-9 col-md-9 offset-1">
+                              <p>Lorem ipsum sit dolor amet consilium.</p>
+                            </div>
+                          </div>
+                      </li>
+                      <li>
+                        <div class="row">
+                            <div class="col-2 col-md-2 notify-img">
+                              <i-feather name="user" class="icon-color"></i-feather>
+                            </div>
+                            <div class="col-9 col-md-9 offset-1">
+                              <p>Lorem ipsum sit dolor amet consilium.</p>
+                            </div>
+                          </div>
+                      </li>
+                      <li>
+                        <div class="row">
+                            <div class="col-2 col-md-2 notify-img">
+                              <i-feather name="user" class="icon-color"></i-feather>
+                            </div>
+                            <div class="col-9 col-md-9 offset-1">
+                              <p>Lorem ipsum sit dolor amet consilium.</p>
+                            </div>
+                          </div>
+                      </li>
+                      <li>
+                        <div class="row">
+                            <div class="col-2 col-md-2 notify-img">
+                              <i-feather name="user" class="icon-color"></i-feather>
+                            </div>
+                            <div class="col-9 col-md-9 offset-1">
+                              <p>Lorem ipsum sit dolor amet consilium.</p>
+                            </div>
+                          </div>
+                      </li>
+                  </div>
+                </ul>
+              </li>
+            <li class="nav-item settings-icon p-2">
+                <i-feather name="settings" class="icon-color"></i-feather>
+            </li>
+          </ul>
+          </div>
+          </nav>
+        </div>
+          <!-- NavBar END for large screen -->
+        
+          <!-- navbar for small screen -->
+          <nav class="navbar navbar-expand-md navbar-light fixed-top d-sm-none">
+                  
+            <a class="navbar-brand" href="#">
+              <img src="assets/6Solvelogo.jpg" class="d-inline-block align-top logo" alt="logo-image">
+              </a>
+              <ul class="navbar-nav small-bell">
+                <li class="dropdown p-2">
+                    <a href="#" class="dropdown-toggle notify-bell" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                      <a href="#" data-toggle="tooltip" data-placement="left" title="8 new unread notifications">
+                        <i-feather name="bell" class="icon-color"></i-feather><span class="dot"></span>
+                      </a>
+                    </a>
+                  </li>
+                <li class="nav-item settings-icon p-2">
+                    <i-feather name="settings" class="icon-color"></i-feather>
+                </li>
+              </ul>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <!-- Separator with title -->
+                <li class="nav-item">
+                  <div class="main pt-2">
+                      <div class="form-group has-search text-search">
+                        <i-feather name="search" class="icon-color form-control-feedback"></i-feather>
+                        <input type="text" class="form-control" id="search" placeholder="Search">
+                      </div>
+                    </div>
+              </li>
+            
+                <a href="#" class="list-group-item list-group-item-action active border-0">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="menu-collapsed"><i-feather name="home" class="active mr-4"></i-feather>Dashboard</span>
+                    </div>
+                </a>
+                <!-- /END Separator -->
+                <a href="#" class="list-group-item list-group-item-action border-0">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="menu-collapsed"><i-feather name="bookmark" class="mr-4"></i-feather>Tasks</span>
+                    </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action border-0">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="menu-collapsed"><i-feather name="briefcase" class="mr-4"></i-feather>Requisition</span>
+                    </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action border-0">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="menu-collapsed"><i-feather name="award" class="mr-4"></i-feather>Candidates</span>
+                    </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action border-0">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="menu-collapsed"><i-feather name="layers" class="mr-4"></i-feather>Application</span>
+                    </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action border-0">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="menu-collapsed"><i-feather name="calendar" class="mr-4"></i-feather>Calendar</span>
+                    </div>
+                </a>
+              </ul>
+            </div>
+          </nav>
+          <!-- NavBar END for small screen -->
+        
+          <div class="row" id="body-row">
+        
+          <!-- Sidebar for large screen -->
+        
+          <div id="sidebar-container" class="sidebar-expanded d-none d-xl-block col-2">
+          <ul class="list-group sticky-top sticky-offset">
+            <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+            </li>
+            <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start recent border-0">
+                <div class="d-flex w-100 justify-content-start align-items-center profile">
+                    <i-feather name="user" class="icon-color user"></i-feather>
+                    <span class="menu-collapsed pl-3">Rani<p>Hr Owner</p></span>
+                    <span class="submenu-icon ml-auto"></span>
+                </div>
+            </a>
+            <div id="submenu2" class="collapse sidebar-submenu">
+                <a href="#" class="list-group-item list-group-item-action">
+                    <span class="menu-collapsed"><span><i-feather name="user"></i-feather></span><span class="pl-3">My Accounts</span></span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <span class="menu-collapsed"><span><i-feather name="settings"></i-feather></span><span class="pl-3">Settings</span></span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <span class="menu-collapsed"><span><i-feather name="alert-circle"></i-feather></span><span class="pl-3">Support</span></span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <span class="menu-collapsed"><span><i-feather name="log-out"></i-feather></span><span class="pl-3">Logout</span></span>
+                </a>
+            </div>
+          
+              <a href="#" class="list-group-item list-group-item-action active border-0">
+                  <div class="d-flex w-100 justify-content-start align-items-center">
+                      <span class="menu-collapsed"><i-feather name="home" class="active mr-4"></i-feather>Dashboard</span>
+                  </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action border-0">
+                  <div class="d-flex w-100 justify-content-start align-items-center">
+                      <span class="menu-collapsed"><i-feather name="bookmark" class="mr-4"></i-feather>Tasks</span>
+                  </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action border-0">
+                  <div class="d-flex w-100 justify-content-start align-items-center">
+                      <span class="menu-collapsed"><i-feather name="briefcase" class="mr-4"></i-feather>Requisition</span>
+                  </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action border-0">
+                  <div class="d-flex w-100 justify-content-start align-items-center">
+                      <span class="menu-collapsed"><i-feather name="award" class="mr-4"></i-feather>Candidates</span>
+                  </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action border-0">
+                  <div class="d-flex w-100 justify-content-start align-items-center">
+                      <span class="menu-collapsed"><i-feather name="layers" class="mr-4"></i-feather>Application</span>
+                  </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action border-0">
+                  <div class="d-flex w-100 justify-content-start align-items-center">
+                      <span class="menu-collapsed"><i-feather name="calendar" class="mr-4"></i-feather>Calendar</span>
+                  </div>
+              </a>
+          </ul>
+          <!-- List Group END-->
+          </div>
+          <!-- sidebar-container END for large screen -->
+          
+          <!-- Sidebar for medium-size screen -->
+          <div id="sidebar-container" class="sidebar-expanded d-none d-sm-block d-xl-none col-2">
+            <ul class="list-group sticky-top sticky-offset">
+              <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed"> 
+              </li>
+              <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action flex-column align-items-start recent border-0">
+                  <div class="d-flex w-100 justify-content-start align-items-center profile">
+                      <i-feather name="user" class="icon-color user"></i-feather>
+                      <span class="menu-collapsed pl-3">Rani</span>
+                      <span class="submenu-icon ml-auto"></span>
+                  </div>
+              </a>
+              <div id="submenu2" class="collapse sidebar-submenu">
+                <a href="#" class="list-group-item list-group-item-action">
+                  <span class="menu-collapsed"><span><i-feather name="user"></i-feather></span><span class="pl-3 hr-detail">Account</span></span>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                  <span class="menu-collapsed"><span><i-feather name="settings"></i-feather></span><span class="pl-3 hr-detail">Settings</span></span>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                  <span class="menu-collapsed"><span><i-feather name="alert-circle"></i-feather></span><span class="pl-3 hr-detail">Support</span></span>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                  <span class="menu-collapsed"><span><i-feather name="log-out"></i-feather></span><span class="pl-3 hr-detail">Logout</span></span>
+              </a>
+              </div>
+            
+                <a href="#" class="list-group-item list-group-item-action active border-0">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="menu-collapsed med-menu"><i-feather name="home" class="active mr-4"></i-feather></span>
+                    </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action border-0">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="menu-collapsed med-menu"><i-feather name="bookmark" class="mr-4"></i-feather></span>
+                    </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action border-0">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="menu-collapsed med-menu"><i-feather name="briefcase" class="mr-4"></i-feather></span>
+                    </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action border-0">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="menu-collapsed med-menu"><i-feather name="award" class="mr-4"></i-feather></span>
+                    </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action border-0">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="menu-collapsed med-menu"><i-feather name="layers" class="mr-4"></i-feather></span>
+                    </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action border-0">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="menu-collapsed med-menu"><i-feather name="calendar" class="mr-4"></i-feather></span>
+                    </div>
+                </a>
+            </ul>
+            <!-- List Group END-->
+            </div>
+            <!-- sidebar-container END for medium-size screen -->
+              
+      <!-- MAIN -->
+      <div class="col-12 col-md-10 py-3 p-4 not-space">
+          <h3>Notifications</h3> 
+          <div class="row mx-auto not-scroll tables">
+              <h5 class="m-4"><span class="font-weight-bold">Recently assigned</span><span class="ml-2"><small>5 Unread message</small></span></h5>
+              <div class="col-12 notify-space">
+              <ul class="not-list pl-0">
+                  <li>
+                      <div class="row pt-3 pb-3">
+                      <div class="col-1"><i-feather name="check-circle"></i-feather></div>
+                      <div class="col-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra tellus...</div>
+                      <div class="col-2 not-date">Apr 14 2020</div>
+                      <div class="col-1 not-icon"><i-feather name="chevron-right" class="chev-right"></i-feather></div>
+                      </div>
+                  </li>
+                  <hr class="mt-0 mb-0 mr-5">
+                  <li>
+                    <div class="row pt-3 pb-3">
+                    <div class="col-1"><i-feather name="check-circle"></i-feather></div>
+                    <div class="col-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra tellus...</div>
+                    <div class="col-2 not-date">Apr 14 2020</div>
+                    <div class="col-1 not-icon"><i-feather name="chevron-right" class="chev-right"></i-feather></div>
+                    </div>
+                </li>
+                <hr class="mt-0 mb-0 mr-5">
+                <li>
+                    <div class="row pt-3 pb-3">
+                    <div class="col-1"><i-feather name="check-circle"></i-feather></div>
+                    <div class="col-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra tellus...</div>
+                    <div class="col-2 not-date">Apr 14 2020</div>
+                    <div class="col-1 not-icon"><i-feather name="chevron-right" class="chev-right"></i-feather></div>
+                    </div>
+                </li>
+                <hr class="mt-0 mb-0 mr-5">
+                <li>
+                    <div class="row pt-3 pb-3">
+                    <div class="col-1"><i-feather name="check-circle"></i-feather></div>
+                    <div class="col-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra tellus...</div>
+                    <div class="col-2 not-date">Apr 14 2020</div>
+                    <div class="col-1 not-icon"><i-feather name="chevron-right" class="chev-right"></i-feather></div>
+                    </div>
+                </li>
+                <hr class="mt-0 mb-0 mr-5">
+                <li>
+                    <div class="row pt-3 pb-3">
+                    <div class="col-1"><i-feather name="check-circle"></i-feather></div>
+                    <div class="col-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra tellus...</div>
+                    <div class="col-2 not-date">Apr 14 2020</div>
+                    <div class="col-1 not-icon"><i-feather name="chevron-right" class="chev-right"></i-feather></div>
+                    </div>
+                </li>
+                <hr class="mt-0 mb-0 mr-5">
+                <li>
+                    <div class="row not-list-color pt-3 pb-3">
+                    <div class="col-1"><i-feather name="check-circle"></i-feather></div>
+                    <div class="col-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra tellus...</div>
+                    <div class="col-2 not-date">Apr 14 2020</div>
+                    <div class="col-1 not-icon"><i-feather name="chevron-right" class="chev-right"></i-feather></div>
+                    </div>
+                </li>
+                <hr class="mt-0 mb-0 mr-5">
+                <li>
+                    <div class="row not-list-color pt-3 pb-3">
+                    <div class="col-1"><i-feather name="check-circle"></i-feather></div>
+                    <div class="col-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra tellus...</div>
+                    <div class="col-2 not-date">Apr 14 2020</div>
+                    <div class="col-1 not-icon"><i-feather name="chevron-right" class="chev-right"></i-feather></div>
+                    </div>
+                </li>
+                <hr class="mt-0 mb-0 mr-5">
+                <li>
+                    <div class="row not-list-color pt-3 pb-3">
+                    <div class="col-1"><i-feather name="check-circle"></i-feather></div>
+                    <div class="col-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra tellus...</div>
+                    <div class="col-2 not-date">Apr 14 2020</div>
+                    <div class="col-1 not-icon"><i-feather name="chevron-right" class="chev-right"></i-feather></div>
+                    </div>
+                </li>
+                <hr class="mt-0 mb-0 mr-5">
+                <li>
+                    <div class="row not-list-color pt-3 pb-3">
+                    <div class="col-1"><i-feather name="check-circle"></i-feather></div>
+                    <div class="col-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra tellus...</div>
+                    <div class="col-2 not-date">Apr 14 2020</div>
+                    <div class="col-1 not-icon"><i-feather name="chevron-right" class="chev-right"></i-feather></div>
+                    </div>
+                </li>
+                <hr class="mt-0 mb-0 mr-5">
+                <li>
+                    <div class="row not-list-color pt-3 pb-3">
+                    <div class="col-1"><i-feather name="check-circle"></i-feather></div>
+                    <div class="col-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra tellus...</div>
+                    <div class="col-2 not-date">Apr 14 2020</div>
+                    <div class="col-1 not-icon"><i-feather name="chevron-right" class="chev-right"></i-feather></div>
+                    </div>
+                </li>
+                <hr class="mt-0 mb-0 mr-5">
+              </ul>
+            </div>
+          </div>
+
+      </div>
+      <!-- Main Col END -->
+      
+      </div>
+      <!-- body-row END -->
+          </header>
+          
+          <section>
+      
+          </section>
+      
+              <footer>
+      
+              </footer>
+          </div>
+      </div>
+      
+    
+  
